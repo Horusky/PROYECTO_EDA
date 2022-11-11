@@ -135,6 +135,45 @@ void ingreseHistorial(Medico lista){
 	cout << " Historial(es) medico(s) registrado(s) correctamente.";Sleep(2000);
 }
 
+void RegistrarCamas(Medico lista){
+    int np;
+	int i = 0;
+	Medico tmp = lista;
+	Paciente tmpPaciente = NULL;
+	Camas disponibilidadcamas = NULL;
+
+	while (tmp){
+		cout << endl;
+		cout << "\n>>> Ingrese la cantidad de habitaciones para las camas disponibles, generadas para los pacientes del medico [" << i++ +1 << "]: ";
+		cin >> np;
+		cout << endl;
+
+		for (int i = 0; i < np; i++){
+			disponibilidadcamas = new (struct disponibilidadcamas);
+			
+			cout << " ---> Ingrese la cantidad de camas disponibles en la habitacion [" << i + 1 << "]: ";
+			cin >> disponibilidadcamas -> cantidad;
+			cout << " ---> Ingrese el piso y pasillo de la habitacion [" << i + 1 << "]: ";
+			cin >> disponibilidadcamas -> ubicacion;
+			cout << " ---> Ingrese un alias para la cama del paciente: ";
+			cin >> disponibilidadcamas -> nombre_cama;
+		}
+		tmp = tmp -> sgte;
+	}
+	cout << endl;
+	
+	cout << "  ";
+	cout << "=";Sleep(100);
+	cout << "=";Sleep(100);
+	cout << "=";Sleep(100);
+	cout << "=";Sleep(100);
+	cout << "=";Sleep(100);
+	cout << "=";Sleep(100);
+	cout << "=";Sleep(100);
+	cout << ">";Sleep(800);
+	cout << " Cama(s) registrada(s) correctamente.";Sleep(2000);
+    
+}
 
 
 int main(){
