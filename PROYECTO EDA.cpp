@@ -58,6 +58,41 @@ void insertar(Medico &lista, char nombre[], char especialidad[]){
 	lista = nuevo;
 }
 
+void ingresaPacientes(Medico lista){
+	int np;
+	Medico tmp = lista;
+	Paciente paciente = NULL;
+
+	while (tmp){
+		cout << "\n>>> Ingrese la cantidad de pacientes para el especialista [" << tmp -> nombre << "]: ";
+		cin >> np;
+		cout << endl;
+
+		for (int i = 0; i < np; i++){
+			paciente = new (struct paciente);
+			
+			cout << " ---> Paciente Num " << i + 1 << ": ";
+			cin >> paciente -> nombre;
+			paciente -> sgte = tmp -> proximo;
+			tmp -> proximo = paciente;
+		}
+		tmp = tmp -> sgte;
+	}
+	cout << endl;
+	
+	cout << "  ";
+	cout << "=";Sleep(100);
+	cout << "=";Sleep(100);
+	cout << "=";Sleep(100);
+	cout << "=";Sleep(100);
+	cout << "=";Sleep(100);
+	cout << "=";Sleep(100);
+	cout << "=";Sleep(100);
+	cout << ">";Sleep(800);
+	cout << " Paciente(s) registrado(s) correctamente.";Sleep(2000);
+	cout << endl;
+}
+
 
 int main(){
 	
