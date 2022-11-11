@@ -93,6 +93,49 @@ void ingresaPacientes(Medico lista){
 	cout << endl;
 }
 
+void ingreseHistorial(Medico lista){
+	int np;
+	Medico tmp = lista;
+	Paciente tmpPaciente = NULL;
+	Historial Hist_Clin_Paciente = NULL;
+
+	while (tmp){
+		Sleep(1000);
+		cout << endl;
+		cout << ">>> Ingrese el numero de historial medico, recuerde que su medico es [" << tmp -> nombre << "]: ";
+		cin >> np;
+		
+		for (int i = 0; i < np; i++){
+			Hist_Clin_Paciente = new (struct Hist_Clin_Paciente);
+
+			cout << endl;
+			cout << " ---> Historial [" << i + 1 << "]: La enfermedad del paciente es: ";
+			cin >> Hist_Clin_Paciente -> enfemerdad;
+
+			cout << " ---> Historial [" << i + 1 << "]: El estado del paciente es: ";
+			cin >> Hist_Clin_Paciente -> estado;
+
+			cout << " ---> Historial [" << i + 1 << "]: Los tratamientos del paciente es: ";
+			cin >> Hist_Clin_Paciente -> tratamientos;
+		}
+		tmp = tmp -> sgte;
+	}
+
+	cout << endl;
+
+	cout << "  ";
+	cout << "=";Sleep(100);
+	cout << "=";Sleep(100);
+	cout << "=";Sleep(100);
+	cout << "=";Sleep(100);
+	cout << "=";Sleep(100);
+	cout << "=";Sleep(100);
+	cout << "=";Sleep(100);
+	cout << ">";Sleep(800);
+	cout << " Historial(es) medico(s) registrado(s) correctamente.";Sleep(2000);
+}
+
+
 
 int main(){
 	
