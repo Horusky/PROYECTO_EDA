@@ -297,6 +297,71 @@ void imprimir(Medico lista){
 
 
 int main(){
+	Medico listaMedico = NULL;
+	int nd, np;
+	char nombre[20];
+	char especialidad[100];
 	
+	system("cls");
+
+	cout << ".:.:. BIENVENIDO AL CENTRO MEDICO OBTETRICO MAYO SRL .:.:." << endl;
+
+	Sleep(2000);
+
+	cout << " \n>>> Ingrese la cantidad de especialistas: ";
+	cin >> nd;
+
+	for (int i = 0; i < nd; i++){
+		cout << endl;
+		cout << " ---> Nombre del especialista (" << i + 1 << "): ";
+		cin >> nombre;
+
+		cout << " ---> Ingrese su especialidad (" << i + 1 << "): ";
+		cin >> especialidad;
+
+		insertar(listaMedico, nombre, especialidad);
+	}
+
+	cout << endl;
+
+	cout << "  ";
+	cout << "=";Sleep(100);
+	cout << "=";Sleep(100);
+	cout << "=";Sleep(100);
+	cout << "=";Sleep(100);
+	cout << "=";Sleep(100);
+	cout << "=";Sleep(100);
+	cout << "=";Sleep(100);
+	cout << ">";Sleep(800);
+	cout << " Medico(es) registrado(s) correctamente.";Sleep(2000);
+	cout << endl;
+
+	ingresaPacientes(listaMedico);
+
+	cout << endl;
+	cout << " ---> Ingrese el nombre del especialista que desee buscar: ";
+	cin >> nombre;
+
+	cout << " ---> Ingrese la especialidad que desee buscar: ";
+	cin >> especialidad;
+
+	BusquedaMedico(listaMedico, nombre, especialidad);
+	
+	ingreseHistorial(listaMedico);
+    RegistrarCamas(listaMedico);
+    RegistrarMedicamentos(listaMedico);
+	cout << endl;
+	cout << "  ";
+	
+	cout << " Imprimiendo datos, espere un momento...";Sleep(2000);
+	cout << endl;
+
+	cout << "\n==========================================\n";
+	cout << "\tRegistro medico y paciente:";
+	cout << "\n==========================================\n";
+	imprimir(listaMedico);
+	cout << "\n==========================================\n";
+	cout << endl;
+
 	return 0;
 }
